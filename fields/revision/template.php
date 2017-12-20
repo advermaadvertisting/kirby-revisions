@@ -94,29 +94,6 @@
 		<?php endforeach; ?>
 	</div>
 
-<?php if( ! empty( $items_missing_in_blueprint ) ) : ?>
-	<div class="revisions__fields__missing">
-		<div class="revisions__subline">
-			<i class="fa fa-exclamation-triangle"></i>
-			<strong class="revisions__color--del">Fields missing in the blueprint</strong>
-			<span class="revisions__color--del">(<?php echo count( $items_missing_in_blueprint ); ?>)</span>
-		</div>
-
-		Fields in this section are missing in the blueprint, but are still restored on rollback.
-
-		<div class="revision-content">
-			<?php foreach( $items_missing_in_blueprint as $item ) : ?>
-				<h2><?php echo $item['title']; ?></h2>
-				<?php if( ! empty( $item['value'] ) ) : ?>
-					<div class="revision-part">
-						<?php echo $item['value']; ?>
-					</div>
-				<?php endif; ?>
-			<?php endforeach; ?>
-		</div>
-	</div>
-<?php endif; ?>
-
 	<div class="revisions__actions">
 		<div class="revision-delete">
 			<a href="<?php echo $delete_url; ?>" class="btn btn-rounded btn-submit btn-negative" target="_top" onclick="return confirm('Delete this revision?')">Delete</a>
