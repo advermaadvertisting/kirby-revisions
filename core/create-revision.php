@@ -24,8 +24,8 @@ class CreateRevision {
 	function create() {
 		if( ! $this->valid() ) return false;
 
-		page()->create($this->id, 'revision', array() );
-		page($this->id)->update( $this->filter($this->collection), $this->lang );
+    $revisionPage = page()->create($this->id, 'revision', array() );
+		$revisionPage->update( $this->filter($this->collection), $this->lang );
 	}
 
 	function valid() {
